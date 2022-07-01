@@ -10,6 +10,7 @@ def index (request) :
     if request.method == "POST":
        # getting input with name = fname in HTML form
        uls = request.POST['uls']
+       uls=(str.strip("https://"))
        urlv=urls.objects.all()
        if(urls.objects.filter(website=uls).exists()):
                 ran=urls.objects.get(website=uls)
